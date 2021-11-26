@@ -33,96 +33,69 @@
       <div class="d-flex justify-content-center h-100">
         <div class="card">
           <div class="card-header">
-            <h3>Registration Form</h3>
+            <h3>Contact Us</h3>
           </div>
           <div class="card-body">
-            <form>
+            <form #form method="POST" action="https://formspree.io/f/xgepdozk">
               <div class="input-group form-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text">Company's Name</span>
+                  <span class="input-group-text">Full Name</span>
                 </div>
                 <input
                   type="text"
+                  name="Name"
                   size="50%"
                   class="form-control"
-                  placeholder="Name of the company"
+                  placeholder="Enter your Full Name"
                 />
               </div>
-
-              <div class="input-group form-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Company's Address</span>
-                </div>
-                <textarea
-                  size="50%"
-                  class="form-control"
-                  placeholder="Company's Address"
-                ></textarea>
-              </div>
-
               <div class="input-group form-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">Email ID</span>
                 </div>
                 <input
                   type="text"
+                  name="Email"
                   size="50%"
                   class="form-control"
                   placeholder="Enter your Email ID"
                 />
               </div>
-
               <div class="input-group form-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text">Contact No.</span>
-                </div>
-                <input
-                  type="number"
-                  size="50%"
-                  class="form-control"
-                  placeholder="Company's Contact No."
-                />
-              </div>
-
-              <div class="input-group form-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">User Name</span>
+                  <span class="input-group-text">Subject</span>
                 </div>
                 <input
                   type="text"
+                  name="subject"
                   size="50%"
                   class="form-control"
-                  placeholder="Enter your Username"
+                  placeholder="Enter Subject"
                 />
               </div>
 
               <div class="input-group form-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text">Password</span>
+                  <span class="input-group-text">Message</span>
                 </div>
-                <input
-                  type="password"
+                <textarea
+                  rows="4"
+                  cols="50"
                   size="50%"
+                  name="Address"
                   class="form-control"
-                  placeholder="Enter your Password"
-                />
-              </div>
-
-              <div class="row align-items-center remember">
-                <input type="checkbox" />Accept
-                <a style="margin-left: 1%" href="#"> Terms and Condition !</a>
+                  placeholder="Type your message....."
+                ></textarea>
               </div>
               <div class="form-group" style="text-align: center">
-                <input type="submit" value="Register" class="btn login_btn" />
+                <input
+                  type="submit"
+                  value="Submit"
+                  class="btn login_btn"
+                  (click)="form.submit()"
+                />
               </div>
             </form>
-          </div>
-          <div class="card-footer">
-            <div class="d-flex justify-content-center links">
-              Already have an account?<a routerLink="/auth/user-signin"
-                >Sign in</a
-              >
-            </div>
           </div>
         </div>
       </div>
