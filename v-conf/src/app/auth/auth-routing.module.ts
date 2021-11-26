@@ -11,7 +11,7 @@ import { UserSignupComponent } from './user-signup/user-signup.component';
 const routes: Routes = [
   {
     path: '',
-    component: AuthComponent
+    component: AdminSigninComponent
   },
   {
     path: ePath.userSignUp,
