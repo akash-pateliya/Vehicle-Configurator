@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ePath } from 'src/enums/path.enums';
 import { AdminSigninComponent } from './admin-signin/admin-signin.component';
 import { AdminSignupComponent } from './admin-signup/admin-signup.component';
 
@@ -13,19 +14,19 @@ const routes: Routes = [
     component: AuthComponent
   },
   {
-    path: 'user-signup',
+    path: ePath.userSignUp,
     component: UserSignupComponent
   },
   {
-    path: 'user-signin',
+    path: ePath.userSignIn,
     component: UserSigninComponent
   },
   {
-    path: 'admin-signup',
+    path: ePath.adminSignUp,
     component: AdminSignupComponent
   },
   {
-    path: 'admin-signin',
+    path: ePath.adminSignIn,
     component: AdminSigninComponent
   }
 ];
