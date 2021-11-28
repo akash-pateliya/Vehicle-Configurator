@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminSigninComponent } from './auth/admin-signin/admin-signin.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AuthService } from './auth/auth.service';
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
@@ -18,8 +17,14 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {
-    path: 'admin-dashboard',
-    component: AdminDashboardComponent
+    path: 'admin',
+    component: DashboardComponent,
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+    canActivate: [AuthService]
+  },{
+    path: 'user',
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule),
+    canActivate: [AuthService]
   }
 ];
 
