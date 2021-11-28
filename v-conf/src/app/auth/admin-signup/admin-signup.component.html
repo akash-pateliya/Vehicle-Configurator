@@ -24,44 +24,37 @@
           <form>
             <div class="input-group form-group">
               <div class="input-group-prepend">
-                <span class="input-group-text">Company's Name</span>
+                <span class="input-group-text">First Name</span>
               </div>
-              <input type="text" size="50%" class="form-control" placeholder="Name of the company" />
+              <input [(ngModel)]="firstName" type="text" size="50%" class="form-control" placeholder="First Name" />
             </div>
 
             <div class="input-group form-group">
               <div class="input-group-prepend">
-                <span class="input-group-text">Company's Address</span>
+                <span class="input-group-text">Last Name</span>
               </div>
-              <textarea size="50%" class="form-control" placeholder="Company's Address"></textarea>
+              <textarea [(ngModel)]= "lastName" size="50%" class="form-control" placeholder="Last Name"></textarea>
             </div>
 
             <div class="input-group form-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">Email ID</span>
               </div>
-              <input type="text" size="50%" class="form-control" placeholder="Enter your Email ID" />
-            </div>
-
-            <div class="input-group form-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Contact No.</span>
-              </div>
-              <input type="number" size="50%" class="form-control" placeholder="Company's Contact No." />
+              <input [(ngModel)]="email" type="text" size="50%" class="form-control" placeholder="Enter your Email ID" />
             </div>
 
             <div class="input-group form-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">User Name</span>
               </div>
-              <input type="text" size="50%" class="form-control" placeholder="Enter your Username" />
+              <input [(ngModel)]="userName" type="text" size="50%" class="form-control" placeholder="Enter your Username" />
             </div>
 
             <div class="input-group form-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">Password</span>
               </div>
-              <input type="password" size="50%" class="form-control" placeholder="Enter your Password" />
+              <input [(ngModel)]="password" type="password" size="50%" class="form-control" placeholder="Enter your Password" />
             </div>
 
             <div class="row align-items-center remember">
