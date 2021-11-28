@@ -8,13 +8,15 @@ import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
     ToastrModule.forRoot()
   ],
   providers: [],

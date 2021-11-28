@@ -3,8 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { ePath } from 'src/enums/path.enums';
 import { AdminSigninComponent } from './admin-signin/admin-signin.component';
 import { AdminSignupComponent } from './admin-signup/admin-signup.component';
-
-import { AuthComponent } from './auth.component';
 import { UserSigninComponent } from './user-signin/user-signin.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
 

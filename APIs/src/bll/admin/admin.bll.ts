@@ -5,14 +5,14 @@ import { Admin } from "../../entity/admin/Admin";
 
 export class adminBLL {
 
-    async loginAdmin(username: string, password: string): Promise<any> {
+    async loginAdmin(userName: string, password: string): Promise<any> {
         try {
             const encryptedPassword = HmacSHA1(password, process.env.VALIDATE_KEY) + "";
-            const admin = await getManager().findOne(Admin, { username: username, password: encryptedPassword });
+            const admin = await getManager().findOne(Admin, { userName: userName, password: encryptedPassword });
             let result = null;
             if (admin) {
                 const token = jwt.sign(
-                    { AdminId: admin.AdminId, username: admin.username },
+                    { adminUid: admin.adminUid, username: admin.userName },
                     process.env.JWT_KEY
                 );
                 result = {
@@ -29,6 +29,7 @@ export class adminBLL {
     async registerAdmin(admin: Admin): Promise<any> {
         try {
             admin.password = HmacSHA1(admin.password, process.env.VALIDATE_KEY) + "";
+            const ab = 's';
             const result = await getManager().save(Admin, admin);
             return result;
         } catch (error) {

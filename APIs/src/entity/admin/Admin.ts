@@ -8,8 +8,8 @@ import {
 
 @Entity("admins")
 export class Admin {
-    @PrimaryGeneratedColumn()
-    AdminId: number;
+    @PrimaryGeneratedColumn("uuid")
+    adminUid: string;
 
     @Column()
     firstName: string;
@@ -18,16 +18,13 @@ export class Admin {
     lastName: string;
 
     @Column()
-    username: string;
+    userName: string;
 
     @Column()
     email: string;
 
     @Column()
     password: string;
-
-    // @Column("simple-json")
-    // address: { street: string; city: string; state: string; pin_code: number };
 
     @CreateDateColumn()
     created_on: string;

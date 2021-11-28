@@ -4,16 +4,19 @@ import * as express from "express";
 import * as env from "dotenv";
 import adminRoutes from "./routes/admin/admin.routes";
 import datalogRoutes from "./routes/dataLog/dataLog.routes";
+import cors = require("cors");
 
 createConnection().then(async connection => {
     if (connection.isConnected) {
         console.log("Connected to MySql");
     }
+    
     env.config();
 
     // Create Express app
     const app = express();
     app.use(express.json());
+    app.use(cors());
 
     //routes
     app.use('/admin', adminRoutes);

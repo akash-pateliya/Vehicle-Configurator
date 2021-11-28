@@ -29,7 +29,7 @@ export class adminController {
   async signinAdmin(req: Request, res: Response, next: NextFunction) {
     log.request(req, eCrud.Post, eModule.Admin, eFunction.SignIn);
     try {
-      const result = await new adminBLL().loginAdmin(req.body.username, req.body.password);
+      const result = await new adminBLL().loginAdmin(req.body.userName, req.body.password);
       if (result) {
         log.info(StatusCodes.OK, req.path, eModule.Admin, eFunction.SignIn, result);
         res.status(StatusCodes.OK).send(result);
