@@ -6,4 +6,7 @@ export enum eWarningMessage {
     Password = "Please Enter Password",
     Username = "Please Enter Username",
     termsAndCondition = "Please Accept Terms and Condition !",
+    companyName = "Please Enter Company Name",
+    companyAddress = "Please Enter Company Address",
+    contactNumber = "Please Enter Contact Number"
 }

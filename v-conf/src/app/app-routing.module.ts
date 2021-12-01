@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AuthService } from './auth/auth.service';
 import { HomeComponent } from './home/home.component';
+import { SelectVehicleComponent } from './user/select-vehicle/select-vehicle.component';
 
 const routes: Routes = [
   // for the default url (url with no path)
@@ -23,6 +24,7 @@ const routes: Routes = [
     canActivate: [AuthService]
   },{
     path: 'user',
+    component: SelectVehicleComponent,
     loadChildren: () => import('./user/user.module').then(m => m.UserModule),
     canActivate: [AuthService]
   }

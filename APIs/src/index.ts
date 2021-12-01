@@ -4,6 +4,8 @@ import * as express from "express";
 import * as env from "dotenv";
 import adminRoutes from "./routes/admin/admin.routes";
 import datalogRoutes from "./routes/dataLog/dataLog.routes";
+import userRoutes from "./routes/user/user.routes";
+import vehicleRoutes from "./routes/vehicle/vehicle.routes";
 import cors = require("cors");
 
 createConnection().then(async connection => {
@@ -21,6 +23,8 @@ createConnection().then(async connection => {
     //routes
     app.use('/admin', adminRoutes);
     app.use('/datalog', datalogRoutes);
+    app.use('/user', userRoutes);
+    app.use('/vehicle', vehicleRoutes);
 
     // start express server
     app.listen(process.env.SERVER_PORT, () => {

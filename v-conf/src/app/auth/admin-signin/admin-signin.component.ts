@@ -17,24 +17,24 @@ export class AdminSigninComponent implements OnInit {
   userName: string = '';
   password: string = '';
 
-  constructor(private toastr:ToastrService, private authService:AuthService, private router:Router) { }
+  constructor(private toastr: ToastrService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.toastr.info(eInfoMessage.AdminLogin);
   }
 
-  onSignin(){
-    if(this.userName.length == 0 && this.password.length == 0){
+  onSignin() {
+    if (this.userName.length == 0 && this.password.length == 0) {
       this.toastr.warning(eWarningMessage.FillAllFields);
     }
-    else{
+    else {
       this.authService.adminSignIn(this.userName, this.password)
         .subscribe(res => {
           this.toastr.success(eSuccessMessage.Welcome + ' ' + res['adminDetails'].firstName + ' ' + res['adminDetails'].lastName)
           sessionStorage['user_name'] = res['adminDetails'].userName;
           sessionStorage['AdminUid'] = res['adminDetails'].adminUid;
           sessionStorage['token'] = res['token'];
-          this.router.navigate(['/admin-dashboard/'])
+          this.router.navigate(['/admin'])
         },
           error => this.toastr.error(error.statusText));
     }
